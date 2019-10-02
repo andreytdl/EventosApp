@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<head>
+		<link href="../static/css/css.css" th:href="@{/css/css.css}" rel="stylesheet" />
+		<script src="../static/script.js"></script>
+		<title>Eventos App</title>
+	</head>
+	<body>
+		<!-- Cabeçalho -->
+		<div id="header">
+			<a href="AreaDoUsuario">
+				<div id="area">
+					<i class="material-icons" right="2px">person</i> Área do usuário
+				</div>
+			</a>
+			<center>
+				<a href="/">
+					<h1><img src="../static/images/event-icon.png" width="7%" th:src="@{images/event-icon.png}"/></h1>
+				</a>
+			</center>
+		</div>
+		<!-- /Cabeçalho -->
+
+		<!-- Search -->
+		<br><br>
+		<div class="container" align="center">
+			<!-- <div sec:authorize="hasRole('USER')"> -->
+				<div class="formBox" align="center">
+					<form action="/eventos" method="get">
+						<input type="text" name="local" placeholder="local">
+						<input type="date" name="data" placeholder="data">
+						<select name="tipo">
+							<option value = "">Todos</option>
+		               		<option value = "empresarial">Empresarial</option>
+		               		<option value = "universitario">Universitária</option>
+		             	</select>
+		             	<!-- <div class="search"> -->
+		             		<button type="submit" name="pesquisar">
+	   								<img src="../static/images/search-icon.png" height="25px" width="25px" th:src="@{images/search-icon.png}"/>
+							</button>
+		             	<!-- </div> -->
+					</form>
+				</div>
+			<!-- </div> -->
+		</div>
+
+		<!-- /Search -->
+
+        <!-- <div>
+            User: <span sec:authentication="name">NOT FOUND</span>
+            Spring Roles: <span sec:authentication="principal.authorities">NOT FOUND</span>
+        </div> -->
+
+		<!-- eventos -->
+		<center>
+		<table class="container" align="center">
+		<tbody>
+			<tr th:each="evento : ${eventos}">
+				<div id="eventoBox" align="center">
+					<b><font color="#4B0082"><a th:href="${(#mvc.url('AC#DetalhesEvento').arg(0, evento.id)).build()}"><span th:text="${evento.nome}"></span></a></font></b><br><br>
+					<span th:text="${evento.data}"></span> às <span th:text="${evento.horario}"></span><br>
+					<span th:text="${evento.local}"></span><br>
+					<span th:text="${evento.tipo}"></span><br>
+				</div>
+<!-- 				<td><span th:text="${evento.nome}"></span></a></td>
+				<td><span th:text="${evento.local}"></span></td>
+				<td><span th:text="${evento.data}"></span></td>
+				<td><span th:text="${evento.horario}"></span></td> -->
+			</tr>
+		</tbody>
+		</center>
+	
+	</table>
+
+
+
+
+		<!-- /eventos -->
+
+
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	</body>
+</html>

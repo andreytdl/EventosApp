@@ -1,0 +1,17 @@
+body {
+  background: #7c73b4 /*url(../images/bg-body.gif) top no-repeat*/;
+  margin: 0;
+  padding: 0;
+}
+
+#login-form{
+	width: 300px;
+	margin-top: 50px;
+	background: #6a5acd;
+    border-radius: 15px;
+    border-color: #FFF;
+    height: 200px;
+    font-family: 'Teko', sans-serif;
+    display: table;
+    padding: 20px;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <!--Import materialize.css-->
+    <!-- Compiled and minified CSS -->
+<!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    Compiled and minified JavaScript
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<head>
+		<link href="../static/css/css.css" th:href="@{/css/css.css}" rel="stylesheet" />
+		<script src="../static/script.js"></script>
+		<title>Eventos App</title>
+	</head>
+	<body>
+		<!-- Cabeçalho -->
+		<div id="header">
+			<a href="AreaDoUsuario">
+				<div id="area">
+					<i class="material-icons" right="2px">person</i> Área do usuário
+				</div>
+			</a>
+			<center>
+				<a href="/">
+					<h1><img src="../static/images/event-icon.png" width="7%" th:src="@{/images/event-icon.png}"/></h1> <!-- Toda aquela gritaria para o problema ser apenas colocar um / antes do images -->
+				</a>
+			</center>
+		</div>
+		<!-- /Cabeçalho -->
+
+		<!-- Search -->
+		<br><br>
+		<div class="container" align="center">
+			<div class="formBox" align="center">
+				<form action="/eventos" method="get">
+					<input type="text" name="local" placeholder="local">
+					<input type="date" name="data" placeholder="data">
+					<select name="tipo">
+						<option value = "">Todos</option>
+	               		<option value = "empresarial">Empresarial</option>
+	               		<option value = "universitario">Universitária</option>
+	             	</select>
+	             	<!-- <div class="search"> -->
+	             		<button type="submit" name="pesquisar">
+   								<img src="../static/images/search-icon.png" height="25px" width="25px" th:src="@{/images/search-icon.png}"/> <!-- Toda aquela gritaria para o problema ser apenas colocar um / antes do images -->
+						</button>
+	             	<!-- </div> -->
+				</form>
+			</div>
+		</div>
+
+		<!-- /Search -->
+*
+		<!-- eventos -->
+		<center>
+		<table class="container" align="center">
+		<tbody>
+			<tr th:each="evento : ${evento}">
+				<div id="DetalhesBox">
+						<b><font color="#4B0082"><span th:text="${evento.nome}"></span></font></b><br>
+						<font color="#4B0082">Local:</font><br><span th:text="${evento.local}"></span><br>
+						<font color="#4B0082">Quando?:</font><br> <span th:text="${evento.data}"></span> às <span th:text="${evento.horario}"></span><br>
+						<font color="#4B0082">Tipo de evento:</font><br> <span th:text="${evento.tipo}"></span><br>
+						<font color="#4B0082">Sobre:</font><br><span th:text="${evento.descricao}"></span><br>
+						<!-- <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a> -->
+						<a th:href="${(#mvc.url('AC#ComprarIngresso').arg(0, evento.id)).build()}"><button id="ComprarBtn"><center><img src="../static/images/comprar-icon.png" height="25px" width="25px" th:src="@{/images/comprar-icon.png}"/><br>Comprar</center></button></a>
+
+						<!-- Participantes -->
+						<b><br><font color="#4B0082">Participantes</font></b><br>
+						<tr th:each="usuario : ${usuarios}">
+							<font color="#4B0082"><span th:text="${usuario.nome}"></span></font></b><br>
+						</tr>
+					</div>
+				</tr>
+
+		</tbody>
+		</center>
+	
+	</table>
+
+
+
+
+		<!-- /eventos -->
+
+
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+
+	</body>
+</html>

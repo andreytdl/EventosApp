@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link href="../static/css/login.css" th:href="@{/css/login.css}" rel="stylesheet" />
+  <title> Eventos App</title>
+</head>
+
+<body>
+  <div class="section"></div>
+    <center>
+    	<div id="login-form">
+          	<form class="col s12" method="post">
+          	<img src="../static/images/event-icon.png" width="60px" height="60px" th:src="@{images/event-icon.png}"/>
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input type='email' name='username'/>
+                <label for='username'>Email</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12 #6a5acd'>
+                <input class='validate' type='password' name='password'/>
+                <label for='password'>Senha</label>
+              </div>
+            </div>
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Login</button>
+              </div>
+            	<a href="/oauth2/authorization/facebook"><img src="../static/images/facebook-icon.png" width="30px" height="30px" th:src="@{images/facebook-icon.png}"/></a>
+            </center>
+          </form>
+        </div>
+      </div>
+    </center>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+body {
+  background: #7c73b4 /*url(../images/bg-body.gif) top no-repeat*/;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+#header {
+	position: static;
+	top: 2%;
+	background: #6a5acd;
+	border-radius: 15px 50px;
+	border-color: #FFF;
+	height: 10%;
+	width: 90%;
+	display: table;
+  	margin: 0 auto;
+}
+
+#bloco {
+	position: relative;
+	background: #6a5acd;
+	border-radius: 15px;
+	border-color: #FFF;
+	height: 80px;
+  width: 230px;
+	color: #FFF;
+	font-family: 'Teko', sans-serif;
+	display: table;
+  margin: 0 auto;
+
+}
+
+#bloco2 {
+	position: relative;
+	background: #6a5acd;
+	border-radius: 15px;
+	border-color: #FFF;
+	height: 80px;
+    width: 230px;
+	color: #FFF;
+	font-family: 'Teko', sans-serif;
+	display: table;
+  	margin: 0 auto;
+  	
+}
+
+#area{
+	position: absolute;
+	z-index: 1;
+	right: 20px;
+	color: #FFF;
+	font-family: 'Teko', sans-serif;
+	font-size: 20px;
+	display: table-cell;
+	margin-right: 5%;
+    margin-top: 8%;
+}
+
+/* link que ainda não foi visitado */
+a:link {
+   color: inherit;
+}
+
+/* link que foi visitado */
+a:visited {
+    color: inherit;
+}
+
+/* mouse over */
+a:hover {
+    color: inherit;
+}
+
+/* link selecionado */
+a:active {
+    color: inherit;
+}
+
+#formBox{
+	position: fixed;
+	border-radius: 15px;
+  	margin: 0 auto;
+  	width: 40%;
+  	display: inline;
+}
+
+#eventoBox {
+	background: #6a5acd;
+    border-radius: 15px;
+    border-color: #FFF;
+    float: left;
+    width: 170px;
+    height: 200px;
+    margin: 10px 20px;
+    font-family: 'Teko', sans-serif;
+    display: table;
+    padding-top: 10px;
+}
+
+#DetalhesBox{
+	background: #6a5acd;
+    border-radius: 15px;
+    border-color: #FFF;
+    width: 60%;
+    height: 500px;
+    margin: 10px 20px;
+    font-family: 'Teko', sans-serif;
+    font-size: xx-large;
+    display: table;
+    padding-top: 10px;
+    margin: 0 auto;
+    padding-left: 35px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text]{
+  padding: 12px;
+  height: 24px;
+  width: 200px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 3px;
+}
+
+input[type=date], textarea{
+  padding: 12px;
+  height: 24px;
+  width: 200px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 3px;
+}
+
+/* Style the submit button */
+button[type=submit] {
+	position: absolute;
+    color: #6a5acd;
+    padding: 0px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 4px;
+    cursor: pointer;
+    display: inline-grid;
+}
+#ComprarBtn{
+    font-family: 'Teko', sans-serif;
+    font-size: large;
+    background-color: yellow;
+    position: relative;
+    color: #6a5acd;
+    padding: 0px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 4px;
+    cursor: pointer;
+    display: inline-grid;
+}
+
+select{
+	padding: 3px;
+  	height: 24px;
+  	width: 200px;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	box-sizing: border-box;
+  	margin-bottom: 3px;
+}
+
+#nome{
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    color: #FFF;
+    font-family: 'Teko', sans-serif;
+    font-size: 20px;
+    display: table-cell;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+/*#search{
+	position: relative;
+	background-color: #4CAF50;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}*/
